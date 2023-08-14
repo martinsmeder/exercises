@@ -1,0 +1,17 @@
+Remember to understand every word of the problem first!
+
+Exercise 2: Find Maximum and Minimum
+Write a function that takes an array of numbers as input and returns an object containing the 
+maximum and minimum values in the array.
+
+Exercise 3: Insert Element at Index
+Given an array and an element, write a function that inserts the element at a specified index. 
+The original array should be modified.
+
+Exercise 4: Split into Chunks
+Write a function that takes an array and a chunk size as input and returns a new array with 
+the original array split into subarrays of the specified chunk size.
+
+Exercise 5: Array Rotation
+Write a function that takes an array and a number n as input and returns a new array where the 
+elements are rotated to the right by n positions.
