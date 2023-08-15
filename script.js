@@ -1,21 +1,19 @@
-// Exercise 1: Removing Duplicates
-// Write a function that takes an array of numbers and returns a new array with duplicate
-// elements removed, maintaining the order of the original array.
+// Exercise 4: Split into Chunks
+// Write a function that takes an array and a chunk size as input and returns a new array
+// with the original array split into subarrays of the specified chunk size.
 
-function killDupes(arr) {
-  const uniqueArr = [];
-  const seenItems = [];
+// Use splice and push the result of each splice into the new array
 
-  // Avoid indexOf and splice when looping through collections, indexOf lead to inefficient
-  // re-searching, and splice can cause loop disruptions and changes of length
-  arr.forEach((item) => {
-    if (!seenItems.includes(item)) {
-      uniqueArr.push(item);
-      seenItems.push(item);
-    }
-  });
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  console.log(uniqueArr);
+function splitIntoChunks(arr, chunk) {
+  const newArr = [];
+  while (arr.length > 0) {
+    const subArr = arr.splice(0, chunk);
+    newArr.push(subArr);
+  }
+  console.log(newArr);
+  return newArr;
 }
 
-killDupes([1, 2, 3, 3, 6, 4, 5, 6, 7, 7, 8, 6, 9, 0, 0]); // [1, 2, 3, 6, 4, 5, 7, 8, 9, 0]
+splitIntoChunks([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 3);
