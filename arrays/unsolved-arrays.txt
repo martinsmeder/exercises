@@ -1,11 +1,10 @@
-Remember to understand every word of the problem first!
+Exercise 1: Even Numbers
+Given an array of numbers, create a new array that only contains the even numbers.
 
+Exercise 2: Short Words
+Given an array of strings, create a new array that only contains the words with a 
+length less than or equal to a specified value.
 
-
-
-
-
-
-Exercise 5: Array Rotation
-Write a function that takes an array and a number n as input and returns a new array where the 
-elements are rotated to the right by n positions.
+Exercise 3: Prime Numbers
+Given an array of numbers, create a new array that only contains the prime numbers 
+(numbers greater than 1 that have no divisors other than 1 and themselves).

@@ -85,3 +85,66 @@
 
 // splitIntoChunks([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 3);
 // // (4) [Array(3), Array(3), Array(3), Array(1)]
+
+// ============================================================================================
+
+// Exercise 5: Array Rotation
+// Write a function that takes an array and a number n as input and returns a new array where
+// the elements are rotated to the right by n positions.
+
+// function rotateArray(arr, num) {
+//   const newArr = [];
+
+//   for (let i = 0; i < num; i++) {
+//     const lastEl = arr.pop();
+//     newArr.push(lastEl);
+//   }
+
+//   const reversed = newArr.reverse();
+
+//   const toConcat = [reversed, arr];
+//   const finalArr = toConcat.flat();
+
+//   console.log(finalArr);
+//   return finalArr;
+// }
+
+// rotateArray([1, 2, 3, 4, 5, 6, 7, 8, 9], 3);
+
+// ============================================================================================
+
+// map 1: Doubling Numbers
+// Given an array of numbers, create a new array where each number is doubled.
+
+// const arr = [1, 2, 3];
+
+// const mapped = arr.map((x) => x * 2);
+
+// console.log(mapped);
+
+// ============================================================================================
+
+// map 2: Capitalizing Words
+// Given an array of strings, create a new array where each string has its
+// first letter capitalized.
+
+// const arr = ['these', 'words', 'are', 'capitalized'];
+
+// const mapped = arr.map((x) => x.charAt(0).toUpperCase() + x.slice(1));
+
+// console.log(mapped);
+
+// ============================================================================================
+
+// map 3: Length of Words
+// Given an array of strings, your task is to transform each string into its corresponding
+// word length. Create a new array where each element represents the length of the word from
+// the original array.
+
+// const arr = ['an', 'array', 'of', 'strings'];
+
+// const mapped = arr.map((x) => x.length);
+
+// console.log(mapped);
+
+// ============================================================================================
