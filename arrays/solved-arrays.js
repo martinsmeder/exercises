@@ -148,3 +148,92 @@
 // console.log(mapped);
 
 // ============================================================================================
+
+// filter 1: Even Numbers
+// Given an array of numbers, create a new array that only contains the even numbers.
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// const filtered = arr.filter((num) => num % 2 === 0);
+
+// console.log(filtered);
+
+// ============================================================================================
+
+// filter 2: Short Words
+// Given an array of strings, create a new array that only contains the words with a
+// length less than or equal to a specified value.
+
+// const arr = [
+//   'looooooooong',
+//   'short',
+//   'loooooooooooooooong',
+//   'short',
+//   'loooooong',
+//   'short',
+// ];
+
+// ============================================================================================
+
+// filter 3: Palindromic Words
+// Given an array of strings, create a new array that only contains the palindromic words.
+// Palindromic words are words that read the same forwards and backwards (e.g., "radar",
+// "level", "deified").
+
+// const arr = [
+//     'radar',
+//     'level',
+//     'deified',
+//     'naturrutan',
+//     'word',
+//     'bird',
+//     'girdle',
+//     'dirt',
+//   ];
+
+// function isPalindrome(str) {
+//     const reversed = str.split('').reverse().join('');
+//     return str === reversed;
+//   }
+
+//   const filtered = arr.filter((str) => isPalindrome(str));
+
+//   console.log(filtered);
+
+// ============================================================================================
+
+// reduce() 1: Sum of Numbers
+// Given an array of numbers, use reduce() to calculate and return the sum of all the
+// numbers in the array.
+
+// const arr = [1, 2, 3, 4, 5]; // 15
+
+// const sum = arr.reduce((acc, curr) => acc + curr);
+
+// console.log(sum);
+
+// ============================================================================================
+
+// reduce() 2: Maximum Number
+// Given an array of numbers, use reduce() to find and return the maximum number in the array.
+
+// const arr = [4, 3, 5, 1, 2, 10, 8];
+
+// // If currentValue > accumulator; return currentValue, otherwise; return accumulator
+// const highest = arr.reduce((acc, curr) => (curr > acc ? curr : acc));
+
+// console.log(highest); // 10
+
+// ============================================================================================
+
+// reduce() 3: Concatenate Strings
+// Given an array of strings, use reduce() to concatenate all the strings in the array and
+// return the resulting string
+
+// const arr = ['this ', 'is ', 'a ', 'concatenated ', 'string'];
+
+// const str = arr.reduce((acc, curr) => acc + curr);
+
+// console.log(str); // this is a concatenated string
+
+// ============================================================================================
