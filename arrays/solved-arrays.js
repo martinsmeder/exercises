@@ -52,20 +52,20 @@
 // Given an array and an element, write a function that inserts the element at a specified
 // index. The original array should be modified.
 
-// function insertAtIndex(arr, el, index) {
-//   const arr2 = arr.splice(0, index);
-//   arr2.push(el);
+function insertAtIndex(arr, el, index) {
+  const arr2 = arr.splice(0, index);
+  arr2.push(el);
 
-//   arr.forEach((item) => {
-//     arr2.push(item);
-//   });
+  arr.forEach((item) => {
+    arr2.push(item);
+  });
 
-//   arr = arr2;
+  arr = arr2;
 
-//   console.log(arr);
-// }
+  console.log(arr);
+}
 
-// insertAtIndex([1, 2, 3, 4], 5, 2);
+insertAtIndex([1, 2, 3, 4], 5, 2);
 
 // ============================================================================================
 
@@ -235,5 +235,127 @@
 // const str = arr.reduce((acc, curr) => acc + curr);
 
 // console.log(str); // this is a concatenated string
+
+// ============================================================================================
+
+// reduce() 4: Counting Odd Numbers
+// Given an array of numbers, use reduce() with an initial value of 0 to count and return
+// the number of odd numbers in the array.
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// const oddCount = arr.reduce((acc, curr) => {
+//   if (!(curr % 2 === 0)) {
+//     acc++;
+//   }
+
+//   return acc;
+// }, 0);
+
+// console.log(oddCount); // 5
+
+// ============================================================================================
+
+// reduce() 5: Longest Word
+// Given an array of strings, use reduce() with an initial value of an empty string ('') to
+// find and return the longest word in the array.
+
+// const arr = ['code', 'coder', 'coding', 'theCodingCoder', 'cod'];
+
+// // If curr.length > acc.length, return curr, otherwise return acc
+// const longest = arr.reduce(
+//   (acc, curr) => (curr.length > acc.length ? curr : acc),
+//   ''
+// );
+
+// console.log(longest);
+
+// ============================================================================================
+
+// reduce() 6: Sum of Squares
+// Given an array of numbers, use reduce() with an initial value of 0 to calculate and return
+// the sum of the squares of all the numbers in the array.
+
+// const arr = [1, 2, 3, 4, 5];
+
+// const sum = arr.reduce((acc, curr) => (acc += curr * curr), 0);
+
+// console.log(sum); // 55
+
+// ============================================================================================
+
+// destructuring 1: Swapping Variables
+// Given two variables a and b, swap their values using array destructuring.
+
+// let a = 1;
+// let b = 2;
+
+// [a, b] = [b, a];
+
+// console.log(a, b); // 2 1
+
+// ============================================================================================
+
+// destructuring 2: Extracting First and Rest Elements
+// Given an array, extract the first element and the rest of the elements using array
+// destructuring.
+
+// let first, rest;
+// const arr = [1, 2, 3, 4, 5];
+
+// [first, ...rest] = arr;
+
+// console.log(first, rest); // 1 (4) [2, 3, 4, 5]
+
+// ============================================================================================
+
+// destructuring 3: Returning Multiple Values from a Function
+// Write a function that takes an array as an argument and returns the first and second
+// elements of the array using array destructuring.
+
+// function multipleValues(arr) {
+//   let a, b;
+//   [a, b] = arr;
+//   console.log(a, b);
+//   return a, b;
+// }
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// multipleValues(numbers); 1 2
+
+// ============================================================================================
+
+// spread 1: Concatenating Arrays
+// Given two arrays, create a new array that contains all the elements from both
+// arrays using the spread operator.
+
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
+
+// const combined = [...arr1, ...arr2];
+
+// console.log(combined);
+
+// ============================================================================================
+
+// spread 2: Cloning Arrays
+// Clone an existing array using the spread operator to create a new instance with the same
+// values.
+
+// const arr = [1, 2, 3, 4, 5];
+// const clone = [...arr];
+// console.log(clone); // [1, 2, 3, 4, 5]
+
+// ============================================================================================
+
+// spread 3: Reversing an Array
+// Given an array, create a new array that contains the elements of the original array in
+// reverse order using the spread operator.
+
+// const arr = [1, 2, 3, 4, 5];
+// const reversed = [...arr].reverse();
+// console.log(arr);
+// console.log(reversed); // [5, 4, 3, 2, 1]
 
 // ============================================================================================
