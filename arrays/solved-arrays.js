@@ -52,20 +52,20 @@
 // Given an array and an element, write a function that inserts the element at a specified
 // index. The original array should be modified.
 
-function insertAtIndex(arr, el, index) {
-  const arr2 = arr.splice(0, index);
-  arr2.push(el);
+// function insertAtIndex(arr, el, index) {
+//   const arr2 = arr.splice(0, index);
+//   arr2.push(el);
 
-  arr.forEach((item) => {
-    arr2.push(item);
-  });
+//   arr.forEach((item) => {
+//     arr2.push(item);
+//   });
 
-  arr = arr2;
+//   arr = arr2;
 
-  console.log(arr);
-}
+//   console.log(arr);
+// }
 
-insertAtIndex([1, 2, 3, 4], 5, 2);
+// insertAtIndex([1, 2, 3, 4], 5, 2); // [1, 2, 5, 3, 4]
 
 // ============================================================================================
 
