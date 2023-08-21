@@ -160,21 +160,6 @@
 
 // ============================================================================================
 
-// filter 2: Short Words
-// Given an array of strings, create a new array that only contains the words with a
-// length less than or equal to a specified value.
-
-// const arr = [
-//   'looooooooong',
-//   'short',
-//   'loooooooooooooooong',
-//   'short',
-//   'loooooong',
-//   'short',
-// ];
-
-// ============================================================================================
-
 // filter 3: Palindromic Words
 // Given an array of strings, create a new array that only contains the palindromic words.
 // Palindromic words are words that read the same forwards and backwards (e.g., "radar",

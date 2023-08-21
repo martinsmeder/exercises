@@ -19,6 +19,8 @@ the foundation for understanding closures.
 Move on to using higher-order functions with callback functions. This is a 
 common entry point into functional programming.
 
+===========================================================================
+
 3. Function Chaining:
 Explore function chaining, as it's a logical extension from higher-order 
 functions. Understanding chaining will lead you to currying and composition.
