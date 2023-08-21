@@ -25,6 +25,8 @@ common entry point into functional programming.
 Explore function chaining, as it's a logical extension from higher-order 
 functions. Understanding chaining will lead you to currying and composition.
 
+===========================================================================
+
 4. Currying:
 Delve into currying, which is a technique used in functional programming. 
 It's important to understand before moving to composition.

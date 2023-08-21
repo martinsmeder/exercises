@@ -123,3 +123,53 @@
 // console.log(highest);
 
 // =========================================================================
+
+// Chaining Map and Filter:
+// Given an array of numbers, chain the map and filter functions to first double each
+// number and then filter out the even numbers.
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// const empty = arr.map((x) => x * 2).filter((x) => x % 2 !== 0);
+// console.log(empty);
+
+// =========================================================================
+
+// Chaining Map and Reduce:
+// Starting with an array of strings, chain the map and reduce functions to create a
+// single string that concatenates all the elements.
+
+// const arr = ['a', 'bunch', 'of', 'words'];
+
+// const string = arr.map((x) => x + ' ').reduce((acc, curr) => acc + curr);
+
+// console.log(string);
+
+// =========================================================================
+
+// Chaining Filter, Map, and Reduce:
+// Begin with an array of objects containing name and age properties. Chain the filter,
+// map, and reduce functions to first filter out individuals under a certain age, then extract
+// their names, and finally calculate the total length of all the names combined.
+
+// const people = [
+//   { name: 'Alice', age: 25 },
+//   { name: 'Bob', age: 30 },
+//   { name: 'Charlie', age: 22 },
+//   { name: 'David', age: 28 },
+//   { name: 'Eva', age: 19 },
+//   { name: 'Frank', age: 34 },
+//   { name: 'Grace', age: 27 },
+//   { name: 'Henry', age: 40 },
+//   { name: 'Ivy', age: 29 },
+//   { name: 'Jack', age: 23 },
+// ];
+
+// const length = people
+//   .filter((person) => person.age >= 20)
+//   .map((person) => person.name)
+//   .reduce((acc, name) => acc + name.length, 0);
+
+// console.log(length);
+
+// =========================================================================
