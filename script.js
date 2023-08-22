@@ -1,24 +1,26 @@
 // Don't forget functional programming concepts (pure functions and immutability)!
 
-// https://javascript.info/currying-partials
+// And write down notes about composition and when it's useful
 
-// Currying and Mapping:
-// Create a curried function that takes an array of numbers and a multiplier as arguments.
-// The function should return a new array where each number is multiplied by the provided
-// multiplier.
-
-// =========================================================================
-
-// Curried Filter:
-// Design a curried function that takes an array of strings and a keyword as arguments.
-// The function should return a new array containing only the strings that include the
-// provided keyword.
+// composition 1: Data Transformation Pipeline:
+// Given an array of numbers, create a function composition pipeline that
+// first filters out the even numbers, then squares each remaining number,
+// and finally calculates the sum of the squared numbers.
 
 // =========================================================================
 
-// Partial Application with Currying: Develop a curried function that calculates the
-// average of numbers in an array. The function should be able to accept an optional
-// argument for the number of decimal places to round the average to. If no decimal
-// places argument is provided, the average should be returned as is.
+// composition 2: String Formatting and Transformation:
+// Start with an array of strings. Create a function composition that
+// first filters out strings with less than 5 characters, then capitalizes
+// the remaining strings, and finally concatenates all the strings into a
+// single string.
+
+// =========================================================================
+
+// composition 3: Processing User Profiles:
+// Imagine you have an array of user objects with properties like name,
+// age, and isAdmin. Create a function composition that filters out users
+// who are not admins, then extracts the names of the remaining admin users,
+// and finally sorts the names in alphabetical order.
 
 // =========================================================================

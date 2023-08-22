@@ -31,6 +31,8 @@ functions. Understanding chaining will lead you to currying and composition.
 Delve into currying, which is a technique used in functional programming. 
 It's important to understand before moving to composition.
 
+===========================================================================
+
 5. Function Composition:
 Conclude with function composition. This is a more advanced topic that builds 
 on currying and chaining.
