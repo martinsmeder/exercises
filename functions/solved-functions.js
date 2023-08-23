@@ -260,3 +260,78 @@
 // partialAverage(2); // 3.30
 
 // =========================================================================
+
+// composition 1: Data Transformation Pipeline:
+// Given an array of numbers, create a function composition pipeline that
+// first filters out the even numbers, then squares each remaining number,
+// and finally calculates the sum of the squared numbers.
+
+// const arr = [1, 2, 3, 4, 5];
+
+// const filter = (array) => array.filter((num) => num % 2 !== 0);
+// const square = (array) => array.map((num) => num * num);
+// const getSum = (array) => array.reduce((acc, curr) => acc + curr);
+
+// const composed = getSum(square(filter(arr)));
+
+// console.log(composed); // 35
+
+// =========================================================================
+
+// composition 2: String Formatting and Transformation:
+// Start with an array of strings. Create a function composition that
+// first filters out strings with less than 5 characters, then capitalizes
+// the remaining strings, and finally concatenates all the strings into a
+// single string.
+
+// const arr = ['a bunch of words', 'some other words', 'word', 'last word'];
+
+// const filter = (array) => array.filter((string) => string.length >= 5);
+// const capitalized = (array) =>
+//   array.map((string) => string.charAt(0).toUpperCase() + string.slice(1) + ' ');
+// const concat = (array) => array.reduce((acc, curr) => acc + curr);
+
+// const composed = concat(capitalized(filter(arr)));
+
+// console.log(composed); // A bunch of words Some other words Last word
+
+// =========================================================================
+
+// composition 3: Processing User Profiles:
+// Imagine you have an array of user objects with properties like name,
+// age, and isAdmin. Create a function composition that filters out users
+// who are not admins, then extracts the names of the remaining admin users,
+// and finally sorts the names in alphabetical order.
+
+// const users = [
+//   { name: 'Jack', age: 23, isAdmin: true },
+//   { name: 'Henry', age: 40, isAdmin: true },
+//   { name: 'Alice', age: 25, isAdmin: true },
+//   { name: 'Bob', age: 30, isAdmin: false },
+//   { name: 'Charlie', age: 22, isAdmin: true },
+//   { name: 'David', age: 28, isAdmin: false },
+//   { name: 'Eva', age: 19, isAdmin: true },
+//   { name: 'Frank', age: 34, isAdmin: true },
+//   { name: 'Grace', age: 27, isAdmin: false },
+//   { name: 'Ivy', age: 29, isAdmin: false },
+// ];
+
+// const getAdmins = (array) => array.filter((user) => user.isAdmin === true);
+// const getNames = (array) => array.map((user) => user.name);
+// const sort = (array) => array.sort();
+
+// const composed = sort(getNames(getAdmins(users)));
+
+// console.table(composed);
+// ┌─────────┬───────────┐
+// │ (index) │  Values   │
+// ├─────────┼───────────┤
+// │    0    │  'Alice'  │
+// │    1    │ 'Charlie' │
+// │    2    │   'Eva'   │
+// │    3    │  'Frank'  │
+// │    4    │  'Henry'  │
+// │    5    │  'Jack'   │
+// └─────────┴───────────┘
+
+// =========================================================================

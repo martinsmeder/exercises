@@ -1,26 +1,22 @@
 // Don't forget functional programming concepts (pure functions and immutability)!
 
-// And write down notes about composition and when it's useful
+// =========================================================================
 
-// composition 1: Data Transformation Pipeline:
-// Given an array of numbers, create a function composition pipeline that
-// first filters out the even numbers, then squares each remaining number,
-// and finally calculates the sum of the squared numbers.
+// custom array-methods 1: Custom Map Function:
+// Create a custom myMap function that takes an array and a callback function as arguments.
+// The function should iterate through the array and apply the callback function to each
+// element, returning a new array containing the transformed elements.
 
 // =========================================================================
 
-// composition 2: String Formatting and Transformation:
-// Start with an array of strings. Create a function composition that
-// first filters out strings with less than 5 characters, then capitalizes
-// the remaining strings, and finally concatenates all the strings into a
-// single string.
+// custom array-methods 2: Custom Filter Function:
+// Design a custom myFilter function that takes an array and a filtering callback function as
+// arguments. The function should iterate through the array and use the callback function to
+// determine whether each element should be included in the new array.
 
 // =========================================================================
 
-// composition 3: Processing User Profiles:
-// Imagine you have an array of user objects with properties like name,
-// age, and isAdmin. Create a function composition that filters out users
-// who are not admins, then extracts the names of the remaining admin users,
-// and finally sorts the names in alphabetical order.
-
-// =========================================================================
+// custom array-methods 3: Custom Reduce Function:
+// Implement a custom myReduce function that takes an array, a reducer callback function, and
+// an initial value as arguments. The function should apply the reducer function to each element
+// of the array, accumulating the result based on the initial value.
