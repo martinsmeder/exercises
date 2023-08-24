@@ -335,3 +335,76 @@
 // └─────────┴───────────┘
 
 // =========================================================================
+
+// =========================================================================
+
+// custom array-methods 1: Custom Map Function:
+// Create a custom myMap function that takes a callback function as argument.
+// The function should iterate through the array and apply the callback function to each
+// element, returning a new array containing the transformed elements.
+
+// const arr = [1, 2, 3, 4, 5];
+
+// Array.prototype.myMap = function (callback) {
+//   const mapped = [];
+//   this.forEach((item) => {
+//     const mappedItem = callback(item);
+//     mapped.push(mappedItem);
+//   });
+//   return mapped;
+// };
+
+// console.log(arr.myMap((item) => item * 2)); // [2, 4, 6, 8, 10]
+
+// =========================================================================
+
+// custom array-methods 2: Custom Filter Function:
+// Design a custom myFilter function that takes a filtering callback function as
+// argument. The function should iterate through the array and use the callback function to
+// determine whether each element should be included in the new array.
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// // Define the function as a property on the array prototype
+// Array.prototype.myFilter = function (callback) {
+//   const filtered = [];
+//   // Make the array into the 'this' context
+//   this.forEach((item) => {
+//     if (callback(item)) {
+//       filtered.push(item);
+//     }
+//   });
+//   return filtered;
+// };
+
+// console.log(arr.myFilter((item) => item % 2 === 0)); // [2, 4, 6, 8, 10]
+
+// =========================================================================
+
+// custom array-methods 3: Custom Reduce Function:
+// Implement a custom myReduce function that takes a reducer callback function, and
+// an initial value as arguments. The function should apply the reducer function to each element
+// of the array, accumulating the result based on the initial value.
+
+// const arr = [1, 2, 3, 4, 5];
+
+// console.log(arr.reduce((acc, curr) => (acc *= curr), 1)); // 120
+
+// Array.prototype.myReduce = function (callback, initialValue) {
+//   let accumulator;
+//   if (initialValue) {
+//     accumulator = initialValue;
+//     this.forEach((item) => {
+//       accumulator = callback(accumulator, item);
+//     });
+//   } else {
+//     accumulator = this[0];
+//     for (let i = 1; i < this.length; i++) {
+//       accumulator = callback(accumulator, this[i]);
+//     }
+//   }
+
+//   return accumulator;
+// };
+
+// console.log(arr.myReduce((acc, curr) => (acc *= curr), 1)); // 120

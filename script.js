@@ -1,22 +1,24 @@
 // Don't forget functional programming concepts (pure functions and immutability)!
 
-// =========================================================================
-
-// custom array-methods 1: Custom Map Function:
-// Create a custom myMap function that takes an array and a callback function as arguments.
-// The function should iterate through the array and apply the callback function to each
-// element, returning a new array containing the transformed elements.
+// callbacks 1: Timer
+// Write a function that takes a duration in milliseconds and a callback
+// function as arguments. The function should wait for the specified duration
+// and then execute the callback function.
 
 // =========================================================================
 
-// custom array-methods 2: Custom Filter Function:
-// Design a custom myFilter function that takes an array and a filtering callback function as
-// arguments. The function should iterate through the array and use the callback function to
-// determine whether each element should be included in the new array.
+// callbacks 2: Parallel Async Operations
+// Write a function that takes an array of URLs and a callback function as
+// arguments. The function should make asynchronous requests to each URL and
+// collect the responses. Once all requests are complete, the callback function
+// should be executed with the collected responses as an array.
 
 // =========================================================================
 
-// custom array-methods 3: Custom Reduce Function:
-// Implement a custom myReduce function that takes an array, a reducer callback function, and
-// an initial value as arguments. The function should apply the reducer function to each element
-// of the array, accumulating the result based on the initial value.
+// callbacks 3: API Request with Callbacks
+// Make an API request to a JSON placeholder API
+// (e.g., https://jsonplaceholder.typicode.com/posts) using the axios library
+// (or any other library of your choice) to fetch a list of posts. Implement
+// a function that takes a callback function and performs the API request.
+// Once the data is fetched, the callback function should be executed with the
+// fetched data.
