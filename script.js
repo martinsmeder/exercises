@@ -1,21 +1,127 @@
-// promise-chaining 1: Promise Chaining Basics:
-// Create a sequence of promises that simulate a multi-step process, such as preparing and
-// cooking a meal. Each step should resolve with a message indicating its completion.
-// Chain these promises using .then() to ensure they execute in the correct order.
+// promise-chaining 1: Reading and Processing a File:
+// Read a text file asynchronously using the Node.js fs module. The file could contain a
+// list of items, such as names or numbers. Chain promises to process the data, such as
+// sorting or filtering the items, and then write the processed data to a new file.
+
+// const fs = require('fs');
+
+// const readPath = '';
+// const writePath = '';
+
+// const readFilePromise = (path) => {
+//   return new Promise((resolve, reject) => {
+//     fs.readFile(path, 'utf8', (error, content) => {
+//       if (error) {
+//         reject(error);
+//       } else {
+//         resolve(content);
+//       }
+//     });
+//   });
+// };
+
+// const writeFilePromise = (path, data) => {
+//   return new Promise((resolve, reject) => {
+//     fs.writeFile(path, data, 'utf8', (error) => {
+//       if (error) {
+//         reject(error);
+//       } else {
+//         resolve('File written successfully.');
+//       }
+//     });
+//   });
+// };
+
+// readFilePromise(readPath)
+//   .then((content) => {
+//     console.log('Old file content:\n', content);
+//     const modifiedContent = content.replace('Original', 'Modified');
+//     return writeFilePromise(writePath, modifiedContent);
+//   })
+//   .then((writeResult) => {
+//     console.log(writeResult);
+//     return readFilePromise(writePath);
+//   })
+//   .then((content) => console.log('New file content:\n', content))
+//   .catch((error) => {
+//     console.log(error);
+//   });
 
 // ============================================================================================
 
-// promise-chaining 1: Handling Errors in Promise Chaining:
-// Extend the previous exercise by introducing the possibility of errors in each step of
-// the process. Implement error handling using .catch() to handle errors and gracefully
-// continue the chain if an error occurs.
+// promise-chaining 2: Multiple File Processing:
+// Read multiple text files asynchronously using the Node.js fs module. Each file might
+// contain data related to a specific category. Chain promises to process the data from each
+// file and create a summary report that combines information from all the files.
+
+// const fs = require('fs');
+
+// const path = '';
+
+// const readFilePromise = (path) => {
+//   return new Promise((resolve, reject) => {
+//     fs.readFile(path, 'utf8', (error, content) => {
+//       if (error) {
+//         reject(error);
+//       } else {
+//         resolve(content);
+//       }
+//     });
+//   });
+// };
+
+// const writeFilePromise = (path, data) => {
+//   return new Promise((resolve, reject) => {
+//     fs.writeFile(path, data, 'utf8', (error) => {
+//       if (error) {
+//         reject(error);
+//       } else {
+//         resolve('File written successfully.');
+//       }
+//     });
+//   });
+// };
+
+// readFilePromise(`${path}news.txt`)
+//   .then((newsContent) => {
+//     return writeFilePromise(`${path}summary.txt`, newsContent);
+//   })
+//   .then((writeResult) => {
+//     console.log(writeResult);
+//     return readFilePromise(`${path}misc.txt`);
+//   })
+//   .then((miscContent) => {
+//     return (
+//       readFilePromise(`${path}summary.txt`)
+//         // Nested '.then' to access contents of both summary.txt and misc.txt
+//         .then((summaryContent) => {
+//           const combinedContent = summaryContent + '\n' + miscContent;
+//           console.log(`summary:\n${combinedContent}`);
+//           // File written successfully.
+//           // summary:
+//           // News content
+//           // Misc content
+//           return writeFilePromise(`${path}summary.txt`, combinedContent);
+//         })
+//     );
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
 
 // ============================================================================================
 
-// promise-chaining 1: Fetching and Transforming Data:
-// Use the Fetch API to make a request to an external API that returns an array of objects.
-// Chain promises to process and transform the data. For example, you could fetch a list of
-// user posts, filter out posts with certain criteria, and then map the remaining posts to
-// extract specific information.
+// promise-chaining 3: Data Fetch and Processing:
+// Fetch data from an external API that returns an array of objects (e.g., a list of books,
+// movies, or user profiles). Chain promises to filter out specific items based on certain
+// criteria, and then use .map() to extract relevant information from the filtered data.
+
+// ============================================================================================
+
+// promise-chaining 4: Network Requests - Exercise: Fetching and Transforming Data
+// Data Aggregation from Multiple APIs: Fetch data from multiple external APIs that provide
+// related information (e.g., user profiles, posts, and comments). Chain promises to aggregate
+// and merge the data from different APIs based on common identifiers, and then transform the
+// combined data into a meaningful format.
 
 // ============================================================================================

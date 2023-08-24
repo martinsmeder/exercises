@@ -1,5 +1,8 @@
 https://www.freecodecamp.org/news/write-your-own-promisify-function-from-scratch/
 
+Direct practice towards network requests and file operations to prepare for real world 
+situations.
+
 // ==========================================================================
 
 Promises Basics:
