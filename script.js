@@ -1,24 +1,21 @@
-// Don't forget functional programming concepts (pure functions and immutability)!
+// promise-chaining 1: Promise Chaining Basics:
+// Create a sequence of promises that simulate a multi-step process, such as preparing and
+// cooking a meal. Each step should resolve with a message indicating its completion.
+// Chain these promises using .then() to ensure they execute in the correct order.
 
-// callbacks 1: Timer
-// Write a function that takes a duration in milliseconds and a callback
-// function as arguments. The function should wait for the specified duration
-// and then execute the callback function.
+// ============================================================================================
 
-// =========================================================================
+// promise-chaining 1: Handling Errors in Promise Chaining:
+// Extend the previous exercise by introducing the possibility of errors in each step of
+// the process. Implement error handling using .catch() to handle errors and gracefully
+// continue the chain if an error occurs.
 
-// callbacks 2: Parallel Async Operations
-// Write a function that takes an array of URLs and a callback function as
-// arguments. The function should make asynchronous requests to each URL and
-// collect the responses. Once all requests are complete, the callback function
-// should be executed with the collected responses as an array.
+// ============================================================================================
 
-// =========================================================================
+// promise-chaining 1: Fetching and Transforming Data:
+// Use the Fetch API to make a request to an external API that returns an array of objects.
+// Chain promises to process and transform the data. For example, you could fetch a list of
+// user posts, filter out posts with certain criteria, and then map the remaining posts to
+// extract specific information.
 
-// callbacks 3: API Request with Callbacks
-// Make an API request to a JSON placeholder API
-// (e.g., https://jsonplaceholder.typicode.com/posts) using the axios library
-// (or any other library of your choice) to fetch a list of posts. Implement
-// a function that takes a callback function and performs the API request.
-// Once the data is fetched, the callback function should be executed with the
-// fetched data.
+// ============================================================================================
