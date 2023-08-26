@@ -21,12 +21,13 @@ Creating Promises:
 // ==========================================================================
 
 Chaining Promises:
-https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises
 * Explore how to chain promises using the .then() method to perform sequential
   asynchronous operations.
 * Understand how promise chaining enhances code readability and 
   maintainability.
 * Handle data passing and transformation between chained promises.
+
+// ==========================================================================
 
 Error Handling:
 * Study how to handle errors in promises using the .catch() method to catch 
