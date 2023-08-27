@@ -36,7 +36,11 @@ Error Handling:
   unhandled promise rejections.
 * Implement proper error-handling strategies to make code more robust.
 
+// ==========================================================================
+
 Promise API:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises 
 * Explore essential utility methods provided by promises, such as 
   Promise.all(), Promise.race(), and Promise.resolve().
 * Understand how Promise.all() and Promise.race() work for managing multiple 

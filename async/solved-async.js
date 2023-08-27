@@ -182,7 +182,7 @@
 // movies, or user profiles). Chain promises to filter out specific items based on certain
 // criteria, and then use .map() to extract relevant information from the filtered data.
 
-// const url = 'https://jsonplaceholder.typicode.com/postz';
+// const url = 'https://jsonplaceholder.typicode.com/posts';
 
 // fetch(url)
 //   .then((response) => {
