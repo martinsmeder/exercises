@@ -228,3 +228,145 @@
 //   .catch((error) => console.log(error));
 
 // ============================================================================================
+
+// promise.all() 1: Fetch and Combine Titles
+// 1. Fetch data from all the provided feed URLs using the given API.
+// 2. Use Promise.all() to wait for all the fetch requests to complete.
+// 3. Extract the title of each item from the fetched data.
+// 4. Combine and log the titles from all the feeds.
+
+// const urls = [
+//   'https://www.deepmind.com/blog/rss.xml',
+//   'https://news.mit.edu/topic/mitmachine-learning-rss.xml',
+// ];
+// const api = 'https://rss-to-json-serverless-api.vercel.app/api?feedURL=';
+
+// const deepmind = fetch(api + urls[0]);
+// const mit = fetch(api + urls[1]);
+
+// Promise.all([deepmind, mit]) // Wait for both fetch promises to resolve
+//   .then(([response1, response2]) => // Resolved fetch promises
+//     Promise.all([response1.json(), response2.json()]) // Wait for json parsing to resolve
+//   )
+//   .then(([data1, data2]) => { // Resolved json promises
+//     const items1 = data1.items;
+//     const items2 = data2.items;
+//     const allItems = [...items1, ...items2];
+
+//     const titles = allItems.map((item) => item.title);
+//     console.log(titles);
+//   })
+//   .catch((error) => {
+//     console.error('An error occurred:', error);
+//   });
+
+// ============================================================================================
+
+// promise.all() 2: Fetch and Filter by Keyword
+// 1. Fetch data from all the provided feed URLs using the given API.
+// 2. Use Promise.all() to wait for all the fetch requests to complete.
+// 3. Filter the fetched items to include only those containing a specific keyword
+//    (e.g., "machine learning").
+// 4. Extract and log the titles and URLs of the filtered items.
+
+// const urls = [
+//   'https://www.deepmind.com/blog/rss.xml',
+//   'https://news.mit.edu/topic/mitmachine-learning-rss.xml',
+// ];
+// const api = 'https://rss-to-json-serverless-api.vercel.app/api?feedURL=';
+
+// const fetchJson = (url) => {
+//   // Return the promise itself, which will eventually resolve to the parsed json data. This is
+//   // needed to ensure proper chaining of asynchronous operations. This allows the calling code
+//   // to handle the asynchronous result as a promise, which is needed to continue chaining
+//   // operations using .then and .catch. If you don't return the promises from these functions,
+//   // the calling code won't be able to wait for the asynchronous operations to complete, and
+//   // won't be able to access the resolved values (i.e., response.json() and titleAndUrl)
+
+//   // TLDR: Return the function in order to return the promise, and continue the chain. Otherwise
+//   // the promise chain will be broken, the calling code won't be able to access the resolved values.
+//   return fetch(url).then((response) => {
+//     if (!response.ok) {
+//       throw new Error(`HTTP Error: ${response.status}`);
+//     }
+//     // Return the parsed json data
+//     return response.json();
+//   });
+// };
+
+// const parseJson = (url, keyword) => {
+//   return fetchJson(api + url).then((data) => {
+//     const filteredItems = data.items.filter((item) =>
+//       item.title.includes(keyword)
+//     );
+//     const titleAndUrl = filteredItems.map(
+//       (item) => `Title: ${item.title}\nUrl: ${item.url}`
+//     );
+//     return titleAndUrl;
+//   });
+// };
+
+// const processPromises = urls.map((url) => parseJson(url, 'artificial'));
+
+// Promise.all(processPromises)
+//   .then((results) => {
+//     const allParsedItems = results.flat();
+//     allParsedItems.forEach((item) => console.log(item));
+//   })
+//   .catch((error) => console.error('An error occurred:', error));
+
+// ============================================================================================
+
+// promise.all() 3: Get current items and sort by date
+// 1. Fetch data from all the provided feed URLs using the given API.
+// 2. Use Promise.all() to wait for all the fetch requests to complete.
+// 3. Remove any items older than a year from todays date
+// 4. Sort items from newest to oldest
+// 4. Log the titles and dates
+
+// const urls = [
+//   'https://www.deepmind.com/blog/rss.xml',
+//   'https://news.mit.edu/topic/mitmachine-learning-rss.xml',
+// ];
+// const api = 'https://rss-to-json-serverless-api.vercel.app/api?feedURL=';
+
+// const deepmind = fetch(api + urls[0]);
+// const mit = fetch(api + urls[1]);
+
+// function getCurrentItems(array) {
+//   const today = new Date();
+//   const itemDate = new Date(item.published);
+
+//   const msPerDay = 24 * 60 * 60 * 1000;
+//   const elapsedTime = Math.abs(today - itemDate);
+//   const elapsedDays = Math.floor(elapsedTime / msPerDay);
+
+//   const currentItems = array.filter((item) => {
+//     if (elapsedDays < 365) {
+//       return item;
+//     }
+//   });
+//   return currentItems;
+// }
+
+// Promise.all([deepmind, mit])
+//   .then(([response1, response2]) => {
+//     [response1, response2].forEach((response) => {
+//       if (!response.ok) {
+//         throw new Error(`HTTP Error: ${response.status}`);
+//       }
+//     });
+//     return Promise.all([response1.json(), response2.json()]);
+//   })
+//   .then(([data1, data2]) => {
+//     const items1 = data1.items;
+//     const items2 = data2.items;
+//     const allItems = [...items1, ...items2];
+//     const currentItems = getCurrentItems(allItems);
+//     const sortedItems = currentItems.sort((a, b) => b.published - a.published);
+//     sortedItems.forEach((item) => console.log(item));
+//     return sortedItems;
+//   })
+//   .catch((error) => console.log(error));
+
+// ============================================================================================
