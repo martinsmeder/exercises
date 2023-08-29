@@ -370,3 +370,94 @@
 //   .catch((error) => console.log(error));
 
 // ============================================================================================
+
+// Promise.allSettled() 1: Multiple API Responses
+// Fetch data from multiple APIs using fetch(). After fetching from all APIs, use
+// Promise.allSettled() to handle all the responses, regardless of whether they succeeded or
+// failed. You want to log both successful and unsuccessful responses, along with relevant
+// error messages.
+
+// const url1 = 'https://invalid-url-that-will-reject.com';
+// const url2 = 'https://reqres.in/api/users';
+
+// const promise1 = fetch(url1);
+// const promise2 = fetch(url2);
+
+// Promise.allSettled([promise1, promise2])
+//   .then((results) => {
+//     const rejected = results.filter((result) => result.status === 'rejected');
+//     rejected.forEach((error) => console.log(error));
+
+//     const resolved = results
+//       .filter((result) => result.status === 'fulfilled')
+//       .map((result) => result.value);
+//     return resolved;
+//   })
+//   .then((resolved) => console.log(resolved))
+//   .catch((error) => console.log(error));
+
+// Output:
+// {status: 'rejected', reason: TypeError: Failed to parse URL from
+//     at Ob…h (node:internal/deps/undici/undici:11118:11…}
+// (1) [Response]
+
+// ============================================================================================
+
+// promise.race() 1: Fastest Response
+// Use promise.race() to get the fastest response from two apis and display the data from
+// that response.
+
+// const url1 = 'https://jsonplaceholder.typicode.com/users';
+// const url2 = 'https://reqres.in/api/users';
+
+// const promise1 = fetch(url1);
+// const promise2 = fetch(url2);
+
+// Promise.race([promise1, promise2])
+//   .then((response) => response.json())
+//   .then((data) => data.data.forEach((item) => console.log(item))) // Logs the url2 data
+//   .catch((error) => console.log(error));
+
+// ============================================================================================
+
+// Promise.resolve() 1: Caching layer
+// Add a caching layer to avoid making unnecessary API requests for the same data.
+
+// const url = 'https://jsonplaceholder.typicode.com/users';
+
+// const cache = new Map();
+
+// fetch(url)
+//   .then((response) => {
+//     if (cache.has(url)) {
+//       return Promise.resolve(cache.get(url));
+//     } else {
+//       return response.json();
+//     }
+//   })
+//   .then((data) => {
+//     cache.set(url, data); // Cash data
+//     console.log('First request data:', data);
+//     return data;
+//   })
+//   .catch((error) => console.log(error));
+
+// setTimeout(() => {
+//   fetch(url)
+//     .then((response) => {
+//       if (cache.has(url)) {
+//         return Promise.resolve(cache.get(url));
+//       } else {
+//         console.log(response.json());
+//       }
+//     })
+//     .then((data) => {
+//       console.log('Second request data:', data); // Should be the same as the first request
+//     })
+//     .catch((error) => console.log(error));
+// }, 3000);
+
+// Output:
+// First request data: (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// Second request data: (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+// ============================================================================================

@@ -1,28 +1,66 @@
-// Exercise 1: Using Promise.race() for Fastest Response
-// Imagine you're building a real-time weather dashboard that displays the weather data from
-// multiple sources. You want to display the weather data from two different weather APIs, but
-// you want to use the response from the fastest API to provide the most up-to-date information.
-// Design an exercise where you fetch weather data from two different APIs using fetch(), and
-// then use Promise.race() to determine which API responds first and display its weather data
-// on your dashboard.
+// promisification 1: Promisifying setTimeout
+// Convert the callback-based setTimeout function into a promise-based version.
+
+// function delayCallback(ms, callback) {
+//   setTimeout(callback, ms);
+// }
+
+// // Your task: Convert delayCallback to a promise-based version
+// function delayPromise(ms) {
+//   // Convert the setTimeout operation to use a promise
+// }
+
+// delayPromise(1000).then(() => {
+//   console.log("Delayed message after 1 second.");
+// });
 
 // ============================================================================================
 
-// Exercise 2: Using Promise.resolve() for Initial Data
-// You're working on a chat application where users can send messages in real-time. To provide
-// a seamless experience, you want to show a welcome message to new users when they join a
-// chat room. Create an exercise where you simulate a new user joining the chat room. Use
-// Promise.resolve() to create a resolved promise that delivers a welcome message to the new
-// user as soon as they enter the chat room.
+// promisification 2: Promisifying fs.readFile
+// Convert the callback-based fs.readFile function to a promise-based version.
+
+// const fs = require('fs');
+
+// function readFileCallback(path, callback) {
+//   fs.readFile(path, 'utf8', callback);
+// }
+
+// // Your task: Convert readFileCallback to a promise-based version
+// function readFilePromise(path) {
+//   // Convert the fs.readFile operation to use a promise
+// }
+
+// readFilePromise('example.txt')
+//   .then((content) => {
+//     console.log('File content:', content);
+//   })
+//   .catch((error) => {
+//     console.error('Error reading file:', error);
+//   });
 
 // ============================================================================================
 
-// Exercise 3: Using Promise.allSettled() for Multiple API Responses
-// You're building a news aggregator app that gathers news articles from various sources.
-// Your app fetches news data from different APIs, and sometimes the APIs might have errors
-// or slow responses. Design an exercise where you fetch news articles from multiple APIs
-// using fetch(). After fetching from all APIs, use Promise.allSettled() to handle all the
-// responses, regardless of whether they succeeded or failed. You want to aggregate and display
-// both successful and unsuccessful responses, along with relevant error messages.
+// promisification 3: Promisifying navigator.geolocation.getCurrentPosition
+// Convert the callback-based navigator.geolocation.getCurrentPosition function to a promise-based version.
 
-// ============================================================================================
+// function getCurrentPositionCallback(successCallback, errorCallback) {
+//   if ('geolocation' in navigator) {
+//     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+//   } else {
+//     errorCallback(new Error('Geolocation is not supported by this browser.'));
+//   }
+// }
+
+// // Your task: Convert getCurrentPositionCallback to a promise-based version
+// function getCurrentPositionPromise() {
+//   // Convert the navigator.geolocation.getCurrentPosition operation to use a promise
+// }
+
+// getCurrentPositionPromise()
+//   .then((position) => {
+//     console.log('Latitude:', position.coords.latitude);
+//     console.log('Longitude:', position.coords.longitude);
+//   })
+//   .catch((error) => {
+//     console.error('Error getting current position:', error);
+//   });
