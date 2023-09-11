@@ -645,3 +645,48 @@
 // // Files combined successfully.
 
 // ============================================================================================
+
+// Pagination with promises:
+// Loop through each page of an API until there's no more data.
+
+// const url = 'https://reqres.in/api/users?page=';
+
+// function fetchPage(page) {
+//   return fetch(url + page).then((response) => {
+//     if (!response.ok) {
+//       throw new Error(`HTTP Error: ${response.status}`);
+//     }
+//     return response.json();
+//   });
+// }
+
+// function fetchAllPages() {
+//   let page = 1;
+//   const results = [];
+
+//   function fetchNextPage() {
+//     // Fetch data for the current page using the fetchPage function
+//     return fetchPage(page).then((data) => {
+//       // If the data array in the response is empty, return the results
+//       if (data.data.length === 0) return results;
+
+//       // If there is data, push it to the results array
+//       results.push(data);
+//       // Increment the page number for the next fetch
+//       page++;
+//       // Continue fetching the next page by recursively calling fetchNextPage
+//       return fetchNextPage();
+//     });
+//   }
+
+//   // Start the process by calling fetchNextPage for the first page
+//   return fetchNextPage();
+// }
+
+// // Call fetchAllPages, which returns a promise
+// // When the promise is resolved, log the resulting array to the console
+// fetchAllPages()
+//   .then((dataArray) => console.log(dataArray))
+//   .catch((error) => console.error(error));
+
+// ============================================================================================
