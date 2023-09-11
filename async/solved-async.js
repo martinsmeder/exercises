@@ -671,7 +671,7 @@
 //       if (data.data.length === 0) return results;
 
 //       // If there is data, push it to the results array
-//       results.push(data);
+//       results.push(data.data);
 //       // Increment the page number for the next fetch
 //       page++;
 //       // Continue fetching the next page by recursively calling fetchNextPage
@@ -683,10 +683,20 @@
 //   return fetchNextPage();
 // }
 
+// function parse(dataArray) {
+//   const parsed = dataArray
+//     .flat()
+//     .filter((item) => item.id <= 10)
+//     .map((item) => item.email);
+
+//   return parsed;
+// }
+
 // // Call fetchAllPages, which returns a promise
 // // When the promise is resolved, log the resulting array to the console
 // fetchAllPages()
-//   .then((dataArray) => console.log(dataArray))
+//   .then((dataArray) => parse(dataArray))
+//   .then((parsed) => console.log(parsed))
 //   .catch((error) => console.error(error));
 
 // ============================================================================================
