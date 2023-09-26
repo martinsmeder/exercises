@@ -95,3 +95,193 @@
 // console.log(h); // Should output: 10 inches
 
 // ===========================================================================
+
+// Spread 1: Copying and Extending an Object
+
+// Task: You have an object representing a user profile. Create a new object that copies the
+// existing user profile and adds additional information.
+
+// Code to Use Spread On:
+
+// const userProfile = {
+//   username: 'jsmith',
+//   email: 'jsmith@example.com',
+// };
+
+// Your code here
+
+// const updatedUserProfile = { ...userProfile, firstName: 'John', age: 30 };
+
+// console.log(updatedUserProfile);
+
+// Expected Result: updatedUserProfile should be a new object that contains all properties
+// from userProfile, plus additional properties for the user's first name and age:
+
+// {
+//   username: "jsmith",
+//   email: "jsmith@example.com",
+//   firstName: "John",
+//   age: 30,
+// }
+
+// ===========================================================================
+
+// Spread 2: Merging Multiple Objects
+
+// Task: You have information about a product, its specifications, and pricing. Create a single
+// object that combines this information from different sources.
+
+// Code to Use Spread On:
+
+// const productInfo = {
+//   productName: 'Laptop',
+// };
+
+// const productSpecifications = {
+//   weight: '3.5 lbs',
+//   dimensions: '15 inches',
+// };
+
+// const productPricing = {
+//   price: 999.99,
+// };
+
+// const mergedProduct = {
+//   ...productInfo,
+//   ...productSpecifications,
+//   ...productPricing,
+// };
+
+// console.log(mergedProduct);
+
+// Expected Result: mergedProduct should be a single object that combines properties from
+// productInfo, productSpecifications, and productPricing:
+
+// {
+//   productName: "Laptop",
+//   weight: "3.5 lbs",
+//   dimensions: "15 inches",
+//   price: 999.99,
+// }
+
+// ===========================================================================
+
+// Spread 3: Updating Nested Properties
+
+// Task: You have a user profile with nested address information. Update the user's city and
+// state using the spread operator.
+
+// Code to Use Spread On:
+
+// const userProfile = {
+//   username: 'jsmith',
+//   email: 'jsmith@example.com',
+//   address: {
+//     city: 'New York',
+//     state: 'NY',
+//   },
+// };
+
+// const updatedUserProfile = {
+//   ...userProfile, // Copies everything except the code I'm changing
+//   address: {
+//     // Changed code
+//     city: 'San Francisco',
+//     state: 'CA',
+//   },
+// };
+
+// console.log(updatedUserProfile);
+
+// Expected Result: updatedUserProfile should be a new object that copies the original
+// userProfile and updates the city to "San Francisco" and the state to "CA":
+
+// {
+//   username: "jsmith",
+//   email: "jsmith@example.com",
+//   address: {
+//     city: "San Francisco",
+//     state: "CA",
+//   },
+// }
+
+// ===========================================================================
+
+// Rest 1: Collecting Remaining Properties
+
+// Task: You have an object representing a user profile. Extract the username and collect
+// the remaining properties into a new object.
+
+// Code to Use Rest On:
+
+// const userProfile = {
+//   username: 'jsmith',
+//   email: 'jsmith@example.com',
+//   age: 30,
+//   city: 'New York',
+// };
+
+// const { username: username, ...rest } = userProfile;
+
+// console.log(username); // jsmith
+// console.log(rest); // {email: 'jsmith@example.com', age: 30, city: 'New York'}
+
+// // ===========================================================================
+
+// Rest 2: Combining with Destructuring
+
+// Task: You have an object representing a product with various properties. Use object
+// destructuring with the rest operator to extract specific properties and collect the rest
+// into a new object.
+
+// Code to Use Rest On:
+
+// const product = {
+//   productName: 'Laptop',
+//   weight: '3.5 lbs',
+//   dimensions: '15 inches',
+//   price: 999.99,
+//   brand: 'ExampleBrand',
+// };
+
+// const { productName: productName, weight: weight, ...rest } = product;
+
+// const productDetails = {
+//   productName: productName,
+//   weight: weight,
+//   rest: {
+//     ...rest,
+//   },
+// };
+
+// console.log(productDetails); // {productName: 'Laptop', weight: '3.5 lbs'}
+
+// // ===========================================================================
+
+// Rest 3: Handling Default Values
+
+// Task: You have an object representing user preferences. Extract the theme property and set
+// a default value for fontSize if it doesn't exist.
+
+// Code to Use Rest On:
+
+// const userPreferences = {
+//   theme: 'Dark',
+// };
+
+// const { fontSize = '16px', ...rest } = userPreferences;
+
+// const preferences = {
+//   ...rest,
+//   fontSize: fontSize,
+// };
+
+// console.log(preferences); // {theme: 'Dark', fontSize: '16px'}
+
+// Expected Result: preferences should be a new object that contains the theme property and,
+// if fontSize is not present, it should default to "16px":
+
+// {
+//   theme: "Dark",
+//   fontSize: "16px",
+// }
