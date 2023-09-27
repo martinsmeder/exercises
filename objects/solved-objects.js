@@ -285,3 +285,65 @@
 //   theme: "Dark",
 //   fontSize: "16px",
 // }
+
+// ===========================================================================
+
+// This 1: Object Method
+// Task: Create an object representing a person with a method that uses this
+// to introduce the person.
+
+// const person = {
+//   firstName: 'Greg',
+//   lastName: 'Gregson',
+//   greet: function () {
+//     console.log(`Hi, my name is ${this.firstName} ${this.lastName}!`);
+//   },
+// };
+
+// person.greet(); // Hi, my name is Greg Gregson!
+
+// ===========================================================================
+
+// This 2: Constructor Function
+// Task: Create a constructor function for a car. Inside the constructor
+// function, set properties like make and model using this. Also, create a
+// method that prints the car's details using this.
+
+// function CarConstructor(model, year) {
+//   this.model = model;
+//   this.year = year;
+
+//   this.printDetails = () => {
+//     console.log(`Model: ${this.model}, Year: ${this.year}.`);
+//   };
+// }
+
+// const tesla = new CarConstructor('Tesla', '2023');
+// tesla.printDetails(); // Model: Tesla, Year: 2023.
+
+// ===========================================================================
+
+// This 3: Class Definition
+// Task: Create a JavaScript class representing a book. Inside the class, define
+// properties such as title, author, and publishedYear using this. Additionally,
+// create a method named getBookInfo that returns a string with the book's
+// details using this. Instantiate an object of this class and call the
+// getBookInfo method.
+
+// class Book {
+//   constructor(title, author, published) {
+//     this.title = title;
+//     this.author = author;
+//     this.published = published;
+//   }
+//   bookInfo() {
+//     console.log(
+//       `Title: ${this.title}, Author: ${this.author}, Published: ${this.published}.`
+//     );
+//   }
+// }
+
+// const myBook = new Book('Stuff', 'Me', '2023');
+// myBook.bookInfo();
+
+// ===========================================================================

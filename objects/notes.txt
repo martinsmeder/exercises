@@ -1,0 +1,38 @@
+================================== this ===============================
+
+console.log(this); // => {}
+console.log(this === global); // => false
+
+function regularFunction() {
+  console.log(this === global); // => true
+}
+
+const obj1 = {
+  log() {
+    const innerArrow = () => {
+      console.log(this === obj1); // => true
+    };
+    return innerArrow();
+  },
+};
+
+const obj2 = {
+  log() {
+    function innerDeclatation() {
+      console.log(this === obj2); // => false
+    }
+    return innerDeclatation();
+  },
+};
+
+function Constructor() {
+  this.method = function () {
+    console.log(this instanceof Constructor); // => true
+  };
+}
+const instance = new Constructor();
+
+regularFunction();
+obj1.log();
+obj2.log();
+instance.method();
