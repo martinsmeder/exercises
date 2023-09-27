@@ -36,3 +36,7 @@ regularFunction();
 obj1.log();
 obj2.log();
 instance.method();
+
+==================================== classes ===============================
+
+Constructor - The "factory" for objects
