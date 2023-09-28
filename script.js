@@ -1,76 +1,93 @@
-// Class fields 1: Private Fields
-// Task: Create a class representing a bank account. Implement a private field
-// #balance that stores the account balance. Include a method getBalance()
-// that allows users to retrieve the balance. Ensure that #balance cannot be
-// accessed directly from outside the class.
+// Exercise 1: Basic Inheritance
+// Task: Create a base class Animal with properties name and species.
+// Then, create a subclass Bird that extends Animal with an additional
+// property canFly. Instantiate both classes and demonstrate how the subclass
+// inherits properties from the base class.
 
-// class BankAccount {
-//   #balance;
-//   constructor() {
-//     this.#balance = 1000000000;
-//   }
-//   getBalance() {
-//     console.log(`Balance: ${this.#balance}$.`);
-//   }
-// }
-
-// const account = new BankAccount();
-// console.log(account.#balance); // Throws error because of private field
-// account.getBalance(); // Balance: 1000000000$.
-
-// ===========================================================================
-
-// Class fields 2: Accessor Fields
-// Task: Create a class representing a temperature converter. Implement an
-// accessor field celsius that allows users to set and get the temperature in
-// Celsius. Include an accessor field fahrenheit that automatically converts
-// and returns the temperature in Fahrenheit whenever it is accessed.
-
-// class TempConverter {
-//   constructor() {
-//     this.temp;
-//   }
-//   set celsius(value) {
-//     return (this.temp = value);
-//   }
-//   get celsius() {
-//     return this.temp;
-//   }
-//   get fahrenheit() {
-//     return (this.temp * 9) / 5 + 32;
-//   }
-// }
-
-// const temp = new TempConverter();
-
-// temp.celsius = 20;
-// console.log(temp.celsius);
-// console.log(temp.fahrenheit);
-
-// ===========================================================================
-
-// Class fields 3: Public Fields
-// Task: Create a class representing a product. Implement public fields name,
-// price, and quantity that store product information. Include a method
-// getTotalPrice() that calculates and returns the total cost of the product
-// based on its price and quantity. Allow users to access and modify the
-// fields directly.
-
-// class Product {
-//   constructor(name, price, quantity) {
+// class Animal {
+//   constructor(name, species) {
 //     this.name = name;
-//     this.price = price;
-//     this.quantity = quantity;
-//   }
-//   getTotalPrice() {
-//     const totalPrice = this.price * this.quantity;
-//     console.log(`Total price: ${totalPrice}`);
+//     this.species = species;
 //   }
 // }
 
-// const computers = new Product('Computers', 1000, 5);
-// computers.getTotalPrice(); // Total price: 5000
-// computers.price = 0;
-// computers.getTotalPrice(); // Total price: 0
+// class Bird extends Animal {
+//   constructor(name, species, canFly) {
+//     super(name, species);
+//     this.name = name;
+//     this.species = species;
+//     this.canFly = canFly;
+//   }
+// }
 
+// const dog = new Animal('greg', 'dog');
+// const eagle = new Bird('joe', 'eagle', true);
+// console.log(dog); // Animal {name: 'greg', species: 'dog'}
+// console.log(eagle); // Bird {name: 'joe', species: 'eagle', canFly: true}
+
+// ===========================================================================
+
+// Exercise 2: Method Overriding
+// Task: Extend the previous exercise by adding a method makeSound() to the
+// Animal class, and then override this method in the Bird subclass to make a
+// bird-specific sound. Instantiate both classes and call the makeSound()
+// method to demonstrate method overriding.
+
+// class Animal {
+//   constructor(name, species) {
+//     this.name = name;
+//     this.species = species;
+//   }
+//   makeSound() {
+//     console.log('making sound');
+//   }
+// }
+
+// class Bird extends Animal {
+//   constructor(name, species, canFly) {
+//     super(name, species);
+//     this.name = name;
+//     this.species = species;
+//     this.canFly = canFly;
+//   }
+//   makeSound() {
+//     console.log('chirping');
+//   }
+// }
+
+// const dog = new Animal('greg', 'dog');
+// const eagle = new Bird('joe', 'eagle', true);
+// dog.makeSound(); // making sound
+// eagle.makeSound(); // chirping
+
+// ===========================================================================
+
+// Exercise 3: Multiple Inheritance (Mixin)
+// Task: Create a base class Person with properties name and age. Then, create
+// two mixins, Address and ContactInfo, each with relevant properties.
+// Create a class Employee that extends Person and includes both mixins.
+// Instantiate the Employee class and demonstrate how it inherits properties
+// from both the Person class and the mixins.
+
+// let adressMixin = {
+//   adress: 'somewhere',
+// };
+
+// let contactMixin = {
+//   contact: '+46123456789',
+// };
+
+// class Person {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+// }
+
+// Object.assign(Person.prototype, adressMixin);
+// Object.assign(Person.prototype, contactMixin);
+
+// const greg = new Person('greg', 30);
+// console.log(greg.adress); // somewhere
+// console.log(greg.contact); // +46123456789
 // ===========================================================================

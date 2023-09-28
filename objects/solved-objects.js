@@ -424,3 +424,85 @@
 // computers.getTotalPrice(); // Total price: 0
 
 // ===========================================================================
+
+// Static methods: Static Method for Utility Calculation
+// Task: Create a class MathOperations that includes a static method
+// calculateSum for calculating the sum of an array of numbers. Implement
+// the static method so that it can be used to find the sum of numbers
+// without creating an instance of the class.
+
+// class MathOperations {
+//   static calculateSum(array) {
+//     return array.reduce((acc, curr) => acc + curr);
+//   }
+// }
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// console.log(MathOperations.calculateSum(numbers)); // 15
+
+// ===========================================================================
+
+// Inheritance 1: Basic Inheritance
+// Task: Create a base class Animal with properties name and species.
+// Then, create a subclass Bird that extends Animal with an additional
+// property canFly. Instantiate both classes and demonstrate how the subclass
+// inherits properties from the base class.
+
+// class Animal {
+//   constructor(name, species) {
+//     this.name = name;
+//     this.species = species;
+//   }
+// }
+
+// class Bird extends Animal {
+//   constructor(name, species, canFly) {
+//     super(name, species);
+//     this.name = name;
+//     this.species = species;
+//     this.canFly = canFly;
+//   }
+// }
+
+// const dog = new Animal('greg', 'dog');
+// const eagle = new Bird('joe', 'eagle', true);
+// console.log(dog); // Animal {name: 'greg', species: 'dog'}
+// console.log(eagle); // Bird {name: 'joe', species: 'eagle', canFly: true}
+
+// ===========================================================================
+
+// Inheritance 2: Method Overriding
+// Task: Extend the previous exercise by adding a method makeSound() to the
+// Animal class, and then override this method in the Bird subclass to make a
+// bird-specific sound. Instantiate both classes and call the makeSound()
+// method to demonstrate method overriding.
+
+// class Animal {
+//   constructor(name, species) {
+//     this.name = name;
+//     this.species = species;
+//   }
+//   makeSound() {
+//     console.log('making sound');
+//   }
+// }
+
+// class Bird extends Animal {
+//   constructor(name, species, canFly) {
+//     super(name, species);
+//     this.name = name;
+//     this.species = species;
+//     this.canFly = canFly;
+//   }
+//   makeSound() {
+//     console.log('chirping');
+//   }
+// }
+
+// const dog = new Animal('greg', 'dog');
+// const eagle = new Bird('joe', 'eagle', true);
+// dog.makeSound(); // making sound
+// eagle.makeSound(); // chirping
+
+// ===========================================================================
