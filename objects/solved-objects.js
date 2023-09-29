@@ -506,3 +506,43 @@
 // eagle.makeSound(); // chirping
 
 // ===========================================================================
+
+// Inheritance 3: Using Mix-Ins to Customize Behavior
+// Task: You are tasked with creating two classes, Person and Employee,
+// to represent individuals. The Person class should have a sayHi method that
+// displays a general greeting. The Employee class, which extends Person,
+// should include an id property. However, there's a specific requirement:
+// the Employee class should also have a modified sayHi behavior that greets
+// differently.
+
+// let sayHiMixin = {
+//   sayHi() {
+//     console.log(`${this.name} says: "hey man!" `);
+//   },
+// };
+
+// class Person {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   sayHi() {
+//     console.log(`${this.name} says: "hey dude!" `);
+//   }
+// }
+
+// class Employee extends Person {
+//   constructor(name, id) {
+//     super(name);
+//     this.id = id;
+//   }
+// }
+
+// const greg = new Person('Greg');
+// greg.sayHi(); // Greg says: "hey dude!"
+
+// Object.assign(Employee.prototype, sayHiMixin);
+
+// const sven = new Employee('Sven', 123);
+// sven.sayHi(); // Sven says: "hey man!"
+
+// ===========================================================================
