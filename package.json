@@ -4,17 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/martinsmeder/brute_scraper.git"
+    "url": "git+https://github.com/martinsmeder/exercises.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/martinsmeder/brute_scraper/issues"
+    "url": "https://github.com/martinsmeder/exercises/issues"
   },
-  "homepage": "https://github.com/martinsmeder/brute_scraper#readme"
+  "homepage": "https://github.com/martinsmeder/exercises#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
