@@ -15,7 +15,7 @@ function reverseString(str) {
 // 3. remainingLetters = "He" > "l" is saved from reverseString("Hel")
 // 4. remainingLetters = "H" > "e" is saved from reverseString("He")
 // 5. remainingLetters = "" > "H" is saved from reverseString("H")
-// Base case: returns ""
+// Base case is reached: returns ""
 // 1. ("" from base case) + "o" = "o"
 // 2. ("o" from recursive case) + "l" = "ol"
 // 3. ("ol" from recursive case) + "l" = "oll"
