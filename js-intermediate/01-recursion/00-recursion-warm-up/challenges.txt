@@ -1,8 +1,0 @@
-Find Maximum Number:
-Write a recursive function to find the maximum number in an array.
-
-Palindrome Check:
-Implement a function to check if a given string is a palindrome using recursion.
-
-Power of a Number:
-Create a recursive function to calculate the power of a number x raised to the exponent n.

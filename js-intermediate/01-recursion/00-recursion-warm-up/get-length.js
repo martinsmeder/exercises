@@ -2,8 +2,6 @@
 // Implement a function to find the length of an array using
 // recursion, without relying on the .length array method.
 
-const numbers = [1, 2, 3, 4, 5];
-
 function getLength(arr) {
   // Base-case:
   if (arr[0] === undefined) return 0;
@@ -13,9 +11,9 @@ function getLength(arr) {
   return 1 + getLength(sliced); // Add 1 to the returned count
 }
 
-console.log(getLength(numbers)); // 5
+module.exports = getLength;
 
-// Explanation:
+// Example arr = [1, 2, 3, 4, 5]:
 // 1 sliced becomes [2, 3, 4, 5] > recursive call getLength([2, 3, 4, 5]) > 1 is saved
 // 2 sliced becomes [3, 4, 5] > recursive call getLength([3, 4, 5]) > 2 is saved
 // 3 sliced becomes [4, 5] > recursive call getLength([4, 5]) > 3 is saved
