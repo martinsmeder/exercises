@@ -1,39 +1,27 @@
-// input: [1, 2]
-// expected: [[1], [2], [1, 2]]
-
-// input: [1, 2, 3]
-// expected: [[1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
-
-// input: [7]
-// expected: [[7]]
-
-// input: []
-// expected: []
-
 function subsets(arr) {
-  const result = [];
-
-  if (arr.length === 0) return result;
-
-  for (let i = 0; i < arr.length; i++) {
-    const current = arr[i];
-    const rest = arr.filter((item) => item !== current);
-    const remaining = subsets(rest);
-
-    for (let j = 0; j < remaining.length; j++) {
-      // ???
-    }
-
-    result.push([...rest]);
-    result.push([current]);
+  // Base case: Return empty array as the only subset
+  if (arr.length === 0) {
+    return [[]];
   }
 
-  result.push(arr);
-  return result;
-}
+  // Get current element
+  const current = arr[0];
 
-const result = subsets([1, 2, 3]);
-console.log(result);
-// result.forEach((item) => console.log(item));
+  // Get rest of elements (excluding current)
+  const rest = arr.slice(1);
+
+  // Recursively generate subsets without the current element
+  const subsetsWithoutCurrent = subsets(rest);
+
+  // For each subset without current element, create a new subset that includes the current element
+  const subsetsWithCurrent = subsetsWithoutCurrent.map((subset) => [
+    // Combine the current element with each subset obtained without it
+    current,
+    ...subset,
+  ]);
+
+  // Combine subsets without current element and subsets with the current element
+  return subsetsWithoutCurrent.concat(subsetsWithCurrent);
+}
 
 module.exports = subsets;
