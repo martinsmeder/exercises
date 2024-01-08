@@ -5,11 +5,12 @@
 const nestedObject = {
   data: {
     info: {
-      stuff: {
+      stuff: 'foo',
+      otherStuff: {
         thing: {
           moreStuff: {
             magicNumber: 44,
-            something: 'foo2',
+            something: 'bar',
           },
         },
       },
@@ -17,35 +18,27 @@ const nestedObject = {
   },
 };
 
-function contains(obj, value) {}
+function contains(obj, value) {
+  // Loop through each key in the object.
+  for (const key in obj) {
+    // Check if the value associated with the current key is an object.
+    if (typeof obj[key] === 'object') {
+      // If object, call the contains function recursively with nested object and search value.
+      // If value found in nested object, return true and exit function, otherwise continue
+      // searching for other keys.
+      return contains(obj[key], value);
+    }
 
-module.exports = contains;
-
-const obj1 = { data: 'stuff' };
-const obj2 = {
-  data: {
-    moreData: 'stuff',
-  },
-};
-
-// If obj.key is an object, go deeper into object key
-// If obj.key is not an object, check value and add to results array
-
-function checkObject(obj) {
-  const results = [];
-
-  function traverse(obj) {
-    for (const key in obj) {
-      if (typeof obj[key] === 'object') {
-        traverse(obj[key]);
-      } else {
-        results.push(obj[key]);
-      }
+    // If value associated with current key is not an object, check if it matches the search value.
+    if (obj[key] === value) {
+      // If the value matches the search value, return true and exit function.
+      return true;
     }
   }
 
-  traverse(obj);
-  return results;
+  // If the function has checked all keys and their associated values and hasn't found the value,
+  // return false to indicate that the value is not present in the object or its nested objects.
+  return false;
 }
 
-console.log(checkObject(obj2));
+module.exports = contains;

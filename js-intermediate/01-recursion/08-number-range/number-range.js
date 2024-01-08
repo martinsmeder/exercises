@@ -12,6 +12,4 @@ function numberRange(x, y) {
   return numbers;
 }
 
-console.log(numberRange(3, 10));
-
 module.exports = numberRange;
