@@ -1,7 +1,8 @@
 /*
   Example of constant time O(1)
 
-  Constant time means that the time required to complete a function is the same regardless of the size of the input data set.
+  Constant time means that the time required to complete a function 
+  is the same regardless of the size of the input data set.
 */
 
 function accessElement(arr, index) {
@@ -18,3 +19,13 @@ const arr2 = Array.from({ length: 10000 }, (_, index) => index + 1);
 console.time('Access Element 2');
 console.log(accessElement(arr2, 1));
 console.timeEnd('Access Element 2');
+
+// Output (almost the same):
+
+// Access Element 1: 3.990966796875 ms
+// Access Element 1: 4.058ms
+// = 0,06 ms
+
+// Access Element 2: 0.16796875 ms
+// Access Element 2: 0.259ms
+// = 0,09 ms
