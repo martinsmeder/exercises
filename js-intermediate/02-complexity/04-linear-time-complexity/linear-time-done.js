@@ -1,7 +1,8 @@
 /*
   Linear Time O(n)
 
-  Linear time means that the time required to complete a function is directly proportional to the size of the input data set.
+  Linear time means that the time required to complete a function 
+  is directly proportional to the size of the input data set.
 */
 
 function sumArray(arr) {
@@ -22,3 +23,9 @@ const arr2 = Array.from({ length: 10000000 }, (_, index) => index + 1);
 console.time('Sum Array 2');
 sumArray(arr2);
 console.timeEnd('Sum Array 2');
+
+// Output:
+// Sum Array 1: 0.18017578125 ms
+// Sum Array 1: 0.407ms
+// Sum Array 2: 15.14111328125 ms
+// Sum Array 2: 15.236ms

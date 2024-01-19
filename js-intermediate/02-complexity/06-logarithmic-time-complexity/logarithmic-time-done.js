@@ -26,3 +26,9 @@ console.timeEnd('Find Power 1');
 console.time('Find Power 2');
 findPower(2, 1000000000);
 console.timeEnd('Find Power 2');
+
+// Output:
+// Find Power 1: 0.1708984375 ms
+// Find Power 1: 0.396ms
+// Find Power 2: 0.02392578125 ms
+// Find Power 2: 0.099ms

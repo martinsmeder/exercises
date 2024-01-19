@@ -20,12 +20,8 @@ console.time('Access Element 2');
 console.log(accessElement(arr2, 1));
 console.timeEnd('Access Element 2');
 
-// Output (almost the same):
-
+// Output:
 // Access Element 1: 3.990966796875 ms
 // Access Element 1: 4.058ms
-// = 0,06 ms
-
 // Access Element 2: 0.16796875 ms
 // Access Element 2: 0.259ms
-// = 0,09 ms
