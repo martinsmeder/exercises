@@ -11,8 +11,6 @@ function getLength(arr) {
   return 1 + getLength(sliced); // Add 1 to the returned count
 }
 
-module.exports = getLength;
-
 // Example arr = [1, 2, 3, 4, 5]:
 // 1 sliced becomes [2, 3, 4, 5] > recursive call getLength([2, 3, 4, 5]) > 1 is saved
 // 2 sliced becomes [3, 4, 5] > recursive call getLength([3, 4, 5]) > 2 is saved
@@ -24,4 +22,4 @@ module.exports = getLength;
 // 2 (1 from recursive call) + 1 = 2
 // 3 (2 from recursive call) + 1 = 3
 // 4 (3 from recursive call) + 1 = 4
-// 5 (4 from recursive call) + 1 = 5 > Computation is finished and final value (5) is returned
+// 5 (4 from recursive call) + 1 = 5 > Computation is finished and f

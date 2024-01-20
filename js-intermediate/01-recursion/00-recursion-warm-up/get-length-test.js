@@ -1,4 +1,4 @@
-const getLength = require('./get-length');
+const getLength = require('./get.length');
 
 describe('getLength', () => {
   it('returns the correct length of an array', () => {
