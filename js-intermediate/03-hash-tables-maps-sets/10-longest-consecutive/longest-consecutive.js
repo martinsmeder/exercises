@@ -27,7 +27,7 @@ function longestConsecutiveSequence(arr) {
   for (let i = 0; i < sorted.length; i++) {
     // If current element + 1 is the same as the next element in array
     if (sorted[i] + 1 === sorted[i + 1])
-      // Add next element to array
+      // Add next element to set
       sequence.add(sorted[i + 1]);
   }
 
