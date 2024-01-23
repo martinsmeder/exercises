@@ -1,4 +1,4 @@
-const wordInstanceCounter = require('./word-instance-counter')
+const wordInstanceCounter = require('./word-instance-counter');
 
 test('Counting instances of a word in a string', () => {
   expect(
