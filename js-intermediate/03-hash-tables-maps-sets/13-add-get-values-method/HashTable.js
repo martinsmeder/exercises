@@ -96,7 +96,17 @@ class HashTable {
     this.storage = [];
   }
 
- // ADD getValues() METHOD
+  getValues() {
+    let values = [];
+    for (let i = 0; i < this.storage.length; i++) {
+      if (this.storage[i] !== undefined) {
+        for (let j = 0; j < this.storage[i].length; j++) {
+          values.push(this.storage[i][j][1]);
+        }
+      }
+    }
+    return values;
+  }
 }
 
 module.exports = HashTable;

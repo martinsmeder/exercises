@@ -10,10 +10,10 @@ describe('HashTable', () => {
   test('Get values from hash table', () => {
     hashTable.set('name', 'Alice');
     hashTable.set('age', 30);
-    hashTable.set('city', 'New York');
+    hashTable.set('city', 'new york');
 
     const values = hashTable.getValues();
-    expect(values).toEqual(expect.arrayContaining(['Alice', 30, 'New York']));
+    expect(values).toEqual(expect.arrayContaining(['Alice', 30, 'new york']));
     expect(values).toHaveLength(3);
   });
 
