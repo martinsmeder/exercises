@@ -15,12 +15,26 @@
 
 const DoublyLinkedList = require('./DoublyLinkedList');
 
-function findPairSum(arr, target) {}
+function findPairSum(arr, target) {
+  // Initiate list to store encountered numbers from input array
+  let encountered = new DoublyLinkedList();
 
-const nums = [2, 6, 3, 8, 10, 5];
-const targetSum = 12;
+  // Loop though input array
+  for (let i = 0; i < arr.length; i++) {
+    // Calculate the difference that together with current number
+    // will equal the target
+    const difference = target - arr[i];
+    // If list contains the difference, the pair has been found
+    if (encountered.contains(difference)) {
+      // Return both values as an array
+      return [difference, arr[i]];
+    }
+    // Add current element to list
+    list.append(arr[i]);
+  }
 
-const pair = findPairSum(nums, targetSum);
-console.log(pair);
+  // Return null if no pair is found
+  return null;
+}
 
 module.exports = findPairSum;
