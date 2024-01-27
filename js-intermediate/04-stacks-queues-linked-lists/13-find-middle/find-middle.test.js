@@ -11,7 +11,7 @@ describe('findMiddle', () => {
     list.add(5);
 
     const middleNode = findMiddle(list);
-    expect(middleNode.data).toBe(3);
+    expect(middleNode).toBe(3);
   });
 
   test('should return the second middle node for a linked list with an even number of nodes', () => {
@@ -24,6 +24,6 @@ describe('findMiddle', () => {
     list.add(6);
 
     const middleNode = findMiddle(list);
-    expect(middleNode.data).toBe(4);
+    expect(middleNode).toBe(4);
   });
 });
