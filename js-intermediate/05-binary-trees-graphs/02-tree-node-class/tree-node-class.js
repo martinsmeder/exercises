@@ -39,6 +39,12 @@
 // 3. Create an instance for each node in the tree and assign the appropriate 
 //    values to the left and right properties.
 
-class TreeNode {}
+class TreeNode {
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+}
 
 module.exports = TreeNode;
