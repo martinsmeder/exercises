@@ -55,23 +55,29 @@ class Node {
 }
 
 function recDepthFirstTraversal(root) {
-  // Base-case:
-  if (root === null) return;
+  // Initiate empty nodesValues array
+  const nodeValues = [];
+
+  // Helper function to get values
+  function getValues(node) {
+    // If current node is not null
+    if (node !== null) {
+      // Push current nodeValue to nodeValues array
+      nodeValues.push(node.value);
+      // Recursively call function on children
+      getValues(node.left);
+      getValues(node.right);
+    }
+  }
+
+  // Call helper function
+  getValues(root);
+
+  // Return nodeValues array
+  return nodeValues;
 }
 
 module.exports = {
   Node,
   recDepthFirstTraversal,
 };
-
-const root = new Node("a");
-root.left = new Node("b");
-root.right = new Node("c");
-root.left.left = new Node("d");
-root.left.right = new Node("e");
-root.right.left = new Node("f");
-console.log("root: " + root.left.left.left);
-recDepthFirstTraversal(root); // should return ['a', 'b', 'd', 'e', 'c', 'f']
-
-// Base-case:
-// When current node is null > return from function
