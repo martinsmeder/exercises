@@ -51,20 +51,35 @@ class Node {
   }
 }
 
-function isValidBST() {}
+function isValidBST(root) {
+  // Initiate empty failed array
+  const failed = [];
+
+  // Recursive helper function to traverse the tree
+  function traverse(node, min, max) {
+    // Check if the current node is not null
+    if (node !== null) {
+      // Check if the current node's value violates the BST property
+      if (
+        (min !== null && node.value <= min) ||
+        (max !== null && node.value >= max)
+      ) {
+        // Push the value to the 'failed' array if it does
+        failed.push(node.value);
+      }
+
+      // Recursive call to traverse the left subtree with updated max value
+      traverse(node.left, min, node.value);
+      // Recursive call to traverse the right subtree with updated min value
+      traverse(node.right, node.value, max);
+    }
+  }
+
+  // Initial call to the traverse function with null as initial min and max
+  traverse(root, null, null);
+
+  // Check if the 'failed' array is empty, indicating a valid BST
+  return failed.length === 0;
+}
 
 module.exports = { Node, isValidBST };
-
-const root = new Node(8);
-const node4 = new Node(4);
-const node10 = new Node(10);
-const node2 = new Node(2);
-const node6 = new Node(6);
-
-root.left = node4;
-root.right = node10;
-node4.left = node2;
-node4.right = node6;
-
-const result = isValidBST(root);
-console.log(result); // True

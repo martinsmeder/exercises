@@ -1,7 +1,7 @@
-const { Node, isValidBST } = require('./validate-bst');
+const { Node, isValidBST } = require("./validate-bst");
 
-describe('isValidBST', () => {
-  it('should return true for a valid binary search tree', () => {
+describe("isValidBST", () => {
+  it("should return true for a valid binary search tree", () => {
     const root = new Node(8);
     const node4 = new Node(4);
     const node10 = new Node(10);
@@ -17,7 +17,7 @@ describe('isValidBST', () => {
     expect(result).toBe(true);
   });
 
-  it('should return false for an invalid binary search tree', () => {
+  it("should return false for an invalid binary search tree", () => {
     const root = new Node(8);
     const node4 = new Node(4);
     const node10 = new Node(10);
