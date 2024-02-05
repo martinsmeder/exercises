@@ -32,10 +32,9 @@ class Graph {
 
   printAdjacencyList() {
     for (const vertex in this.adjacencyList) {
-      console.log(`${vertex} -> ${this.adjacencyList[vertex].join(', ')}`);
+      console.log(`${vertex} -> ${this.adjacencyList[vertex].join(", ")}`);
     }
   }
 }
-
 
 module.exports = Graph;
