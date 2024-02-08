@@ -20,7 +20,7 @@ function merge(left, right) {
   let leftIndex = 0;
   let rightIndex = 0;
 
-  // While both pointers are still within their respective halves, compare the elements at 
+  // While both pointers are still within their respective halves, compare the elements at
   // the current indices and push the smaller one to the merged array.
   while (leftIndex < left.length && rightIndex < right.length) {
     // If the element in the left half is smaller, push it to the merged array and increment the left pointer.
