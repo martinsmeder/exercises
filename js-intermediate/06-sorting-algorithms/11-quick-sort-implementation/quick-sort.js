@@ -18,21 +18,32 @@
 // console.log(quickSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25, 34, 64, 90]
 
 function quickSort(arr) {
-  const originalPivot = arr[arr.length - 1];
+  // Base-case: If array length equal to or less than 1, return array
+  if (arr.length <= 1) return arr;
+
+  // Select last element as pivot
+  const pivot = arr[arr.length - 1];
+
+  // Initiate empty left and right arrays
   const left = [];
-  const right = [originalPivot];
+  const right = [];
+
+  // Loop though array, excluding pivot element
   for (let i = 0; i < arr.length - 1; i++) {
-    if (arr[i] < originalPivot) {
-      left.push(arr[i]);
-    } else right.push(arr[i]);
+    // If current element is lower than pivot
+    if (arr[i] < pivot) {
+      left.push(arr[i]); // Push to left array
+    } else {
+      right.push(arr[i]); // Otherwise, push to right array
+    }
   }
-  console.log(left, right);
+
+  // Get resulting arrays from recursively calling quickSort on left and right
+  const sortedLeft = quickSort(left);
+  const sortedRight = quickSort(right);
+
+  // Merge the resulting arrays, with the pivot element placed in middle
+  return [...sortedLeft, pivot, ...sortedRight];
 }
 
-const toSort = [20, 13, 3, 2, 10, 1, 5, 6];
-console.log(quickSort(toSort));
-
 module.exports = quickSort;
-
-// rearrange
-// recurse on both subArrays
